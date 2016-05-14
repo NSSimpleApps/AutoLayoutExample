@@ -28,7 +28,7 @@
 		B5F583921CE794E00016465C /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		B5F583931CE794E00016465C /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		B5F583961CE795C00016465C /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		B5F583981CE7A1F30016465C /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		B5F583981CE7A1F30016465C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B5F583991CE7A2C50016465C /* AutoLayoutExample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AutoLayoutExample.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -46,7 +46,7 @@
 		B58D4C891CE6E60600FE1F5D = {
 			isa = PBXGroup;
 			children = (
-				B5F583981CE7A1F30016465C /* README */,
+				B5F583981CE7A1F30016465C /* README.md */,
 				B5F583991CE7A2C50016465C /* AutoLayoutExample.png */,
 				B58D4C941CE6E60600FE1F5D /* AutoLayoutExample */,
 				B58D4C931CE6E60600FE1F5D /* Products */,
