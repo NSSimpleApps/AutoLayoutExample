@@ -16,34 +16,57 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var bannerWindow: UIWindow?
 
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        let mainScreen = UIScreen.main.bounds
         
+//        self.bannerWindow = UIWindow(frame: mainScreen)
+//        self.bannerWindow?.windowLevel = UIWindowLevelNormal
+//        self.bannerWindow?.makeKeyAndVisible()
+//        self.bannerWindow?.rootViewController = BottomViewController()
+//        self.bannerWindow?.frame = mainScreen
+//        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
         
+        let resizedFrame = CGRect(origin: mainScreen.origin, size: CGSize(width: mainScreen.width, height: mainScreen.height - 50))
+        
+        self.window = UIWindow(frame: resizedFrame)
+        self.window?.windowLevel = UIWindowLevelNormal
+        self.window?.rootViewController = sb.instantiateViewController(withIdentifier: "RootViewController")
+        self.window?.makeKeyAndVisible()
+        //self.window?.frame = resizedFrame
         
         return true
     }
-
-    func applicationWillResignActive(application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        
+        return .allButUpsideDown
+    }
+    
+    func applicationWillResignActive(_ application: UIApplication) {
+        
+        print(#function)
     }
 
-    func applicationDidEnterBackground(application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        
+        print(#function)
     }
 
-    func applicationWillEnterForeground(application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        
+        print(#function)
     }
 
-    func applicationDidBecomeActive(application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        
+        print(#function)
     }
 
-    func applicationWillTerminate(application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    func applicationWillTerminate(_ application: UIApplication) {
+        
+        print(#function)
     }
 
 

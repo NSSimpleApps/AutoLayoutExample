@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private var cornerRadiusFactor: CGFloat = 0
+    fileprivate var cornerRadiusFactor: CGFloat = 0
     
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
@@ -20,12 +20,12 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         
-        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace,
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
                                             target: nil,
                                             action: nil)
         
         let barButtonItem = UIBarButtonItem(title: "Item",
-                                            style: .Plain,
+                                            style: .plain,
                                             target: nil,
                                             action: nil)
         
@@ -35,39 +35,39 @@ class ViewController: UIViewController {
         self.button1.layer.cornerRadius = 12.5
         
         self.button2.layer.cornerRadius = 12.5
-        self.button2.addTarget(self, action: #selector(self.showToolBarAction(_:)), forControlEvents: .TouchUpInside)
+        self.button2.addTarget(self, action: #selector(self.showToolBarAction(_:)), for: .touchUpInside)
         
         self.cornerRadiusFactor = self.button1.layer.cornerRadius / self.button1.frame.height
     }
     
-    @IBAction func button1Action(sender: UIButton) {
+    @IBAction func button1Action(_ sender: UIButton) {
         
         print(sender.frame.height)
         print(sender.superview!.frame.height)
         print(self.topLayoutGuide.length, self.bottomLayoutGuide.length)
     }
     
-    func showToolBarAction(sender: UIButton) {
+    func showToolBarAction(_ sender: UIButton) {
         
-        sender.setTitle("Hide Tool Bar", forState: .Normal)
-        sender.removeTarget(self, action: #function, forControlEvents: .TouchUpInside)
-        sender.addTarget(self, action: #selector(self.hideToolBarAction(_:)), forControlEvents: .TouchUpInside)
+        sender.setTitle("Hide Tool Bar", for: UIControlState())
+        sender.removeTarget(self, action: #function, for: .touchUpInside)
+        sender.addTarget(self, action: #selector(self.hideToolBarAction(_:)), for: .touchUpInside)
         
-        self.navigationController?.toolbarHidden = false
+        self.navigationController?.setToolbarHidden(false, animated: true)
     }
     
-    func hideToolBarAction(sender: UIButton) {
+    func hideToolBarAction(_ sender: UIButton) {
         
-        sender.setTitle("Show Tool Bar", forState: .Normal)
-        sender.removeTarget(self, action: #function, forControlEvents: .TouchUpInside)
-        sender.addTarget(self, action: #selector(self.showToolBarAction(_:)), forControlEvents: .TouchUpInside)
+        sender.setTitle("Show Tool Bar", for: UIControlState())
+        sender.removeTarget(self, action: #function, for: .touchUpInside)
+        sender.addTarget(self, action: #selector(self.showToolBarAction(_:)), for: .touchUpInside)
         
-        self.navigationController?.toolbarHidden = true
+        self.navigationController?.setToolbarHidden(true, animated: true)
     }
     
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         
-        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+        super.viewWillTransition(to: size, with: coordinator)
         
         let factor = self.view.frame.width / size.width
         
