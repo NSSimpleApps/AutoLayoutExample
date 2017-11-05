@@ -47,7 +47,7 @@ class ViewController: UIViewController {
         print(self.topLayoutGuide.length, self.bottomLayoutGuide.length)
     }
     
-    func showToolBarAction(_ sender: UIButton) {
+    @objc func showToolBarAction(_ sender: UIButton) {
         
         sender.setTitle("Hide Tool Bar", for: UIControlState())
         sender.removeTarget(self, action: #function, for: .touchUpInside)
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
         self.navigationController?.setToolbarHidden(false, animated: true)
     }
     
-    func hideToolBarAction(_ sender: UIButton) {
+    @objc func hideToolBarAction(_ sender: UIButton) {
         
         sender.setTitle("Show Tool Bar", for: UIControlState())
         sender.removeTarget(self, action: #function, for: .touchUpInside)
