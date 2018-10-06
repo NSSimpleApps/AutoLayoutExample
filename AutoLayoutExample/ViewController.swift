@@ -49,7 +49,7 @@ class ViewController: UIViewController {
     
     @objc func showToolBarAction(_ sender: UIButton) {
         
-        sender.setTitle("Hide Tool Bar", for: UIControlState())
+        sender.setTitle("Hide Tool Bar", for: .normal)
         sender.removeTarget(self, action: #function, for: .touchUpInside)
         sender.addTarget(self, action: #selector(self.hideToolBarAction(_:)), for: .touchUpInside)
         
@@ -58,7 +58,7 @@ class ViewController: UIViewController {
     
     @objc func hideToolBarAction(_ sender: UIButton) {
         
-        sender.setTitle("Show Tool Bar", for: UIControlState())
+        sender.setTitle("Show Tool Bar", for: .normal)
         sender.removeTarget(self, action: #function, for: .touchUpInside)
         sender.addTarget(self, action: #selector(self.showToolBarAction(_:)), for: .touchUpInside)
         

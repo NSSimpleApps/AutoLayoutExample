@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var bannerWindow: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let mainScreen = UIScreen.main.bounds
         
@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let resizedFrame = CGRect(origin: mainScreen.origin, size: CGSize(width: mainScreen.width, height: mainScreen.height - 50))
         
         self.window = UIWindow(frame: resizedFrame)
-        self.window?.windowLevel = UIWindowLevelNormal
+        self.window?.windowLevel = UIWindow.Level.normal
         self.window?.rootViewController = sb.instantiateViewController(withIdentifier: "RootViewController")
         self.window?.makeKeyAndVisible()
         //self.window?.frame = resizedFrame
